@@ -6,6 +6,7 @@
 
 ## General Info
 This browser based web application to ...
+* Sup my names Kenar
 	
 ## Technologies
 Technologies used for this project:
