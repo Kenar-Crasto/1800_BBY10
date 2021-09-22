@@ -7,6 +7,8 @@
 ## General Info
 This browser based web application to ...
 * Sup my names Kenar
+* I'm Simon. I'm learning how to use github for the first time.
+
 	
 ## Technologies
 Technologies used for this project:
