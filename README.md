@@ -7,6 +7,7 @@
 ## General Info
 This browser based web application to ...
 * Sup my names Kenar
+* Hello my name is Richard
 	
 ## Technologies
 Technologies used for this project:
