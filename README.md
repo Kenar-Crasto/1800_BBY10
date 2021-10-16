@@ -7,6 +7,7 @@
 ## General Info
 This browser based web application to ...
 * Sup my names Kenar
+* Hello my name is Richard
 * I'm Simon. I'm learning how to use github for the first time.
 
 	
