@@ -61,34 +61,38 @@
 </nav>
 <br>
 <br>
-  <!-- Default dropright button -->
-  <div class="dropdown">
-    <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Lot?
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-      <button class="dropdown-item" type="button">Action</button>
-      <button class="dropdown-item" type="button">Another action</button>
-      <button class="dropdown-item" type="button">Something else here</button>
-    </div>
-  </div>
-  <br>
-  <br>
-
-  <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-    <label class="btn btn-outline-danger" for="btnradio1">Status?</label>
-
-    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-    <label class="btn btn-outline-danger" for="btnradio2">No Spots</label>
-
-    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-    <label class="btn btn-outline-danger" for="btnradio3">Spots Available</label>
-
-    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-    <label class="btn btn-outline-danger" for="btnradio3">Basically Empty</label>
-    <hr>
-    <br>
+  <form>
+        <div class="form-group">
+            <label for="exampleFormControlSelect">What lot? </label>
+            <select class="form-control" id="title">
+              <option>A</option>
+              <option>B</option>
+              <option>D</option>
+              <option>E</option>
+              <option>F</option>
+              <option>G</option>
+              <option>J</option>
+              <option>K</option>
+              <option>L</option>
+              <option>M</option>
+              <option>N</option>
+              <option>Q</option>
+              <option>S</option>
+            </select>
+        </div><br>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">What was the lot status?</label>
+            <select class="form-control" id="status">
+                <option>Very Busy</option>
+                <option>Moderate</option>
+                <option>Not Busy</option>
+            </select>
+            <br>
+            <div>
+              <label for="time">What time did you arrive?</label>
+              <input type="text" name="Time" id="time" placeholder="Enter Time" pattern="[A-za-z0-9]{1-20}" required>
+          </div>
+            <br>
     <div class="fixed-bottom py-3 bg-danger">
       <div class="container text-center">
         <button class="btn btn-danger" type="button">Submit</button>
