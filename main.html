@@ -235,7 +235,7 @@
         }
         writeParkingLots(); //Comment this in the future to stop overwriting information
 
-        // Funciton for displaying the funcitons on FireStore
+        // Funciton for reading the data from FireStore
         function displayParkingLots() {
             db.collection("parkingLots").get()
             .then(allLots => {
