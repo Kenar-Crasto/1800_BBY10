@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -14,7 +14,7 @@
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
 
     <!-- Optional styles and scripts of your own -->
-    <link type="text/css" href="styles/my_style.css">
+    <link type="text/css" rel="" href="styles/my_style.css">
 
     <!-- Firebase 8 CDNs-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -56,8 +56,8 @@
                             Features
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">View your profile</a></li>
-                            <li><a class="dropdown-item" href="#">Rate parking status</a></li>
+                            <li><a class="dropdown-item" href="profile.html">View your profile</a></li>
+                            <li><a class="dropdown-item" href="input.html">Rate parking status</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -87,35 +87,41 @@
         </div>
     </div>
     <br><br>
-   
+
 
     <!-- Cards for Parking Lots-->
     <div class="container">
         <div class="card-group">
 
             <div class="card" style="width: 18rem;">
-                <img src="./images/bcit.jpg" class="card-img-top">
+                <img src="./images/bcit.jpg" alt="" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title" id="lot-one">Parking Lot A</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <a href="input.html" class="link-primary"><b>Write a report</b></a>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
+                    </p>
                     <a href="#" class="btn btn-primary">Read more</a>
                 </div>
             </div>
 
             <div class="card" style="width: 18rem;">
-                <img src="./images/bcit.jpg" class="card-img-top">
+                <img src="./images/bcit.jpg" alt="" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title" id="lot-two">Parking Lot B</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <a href="input.html" class="link-primary"><b>Write a report</b></a>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
+                    </p>
                     <a href="#" class="btn btn-primary">Read more</a>
                 </div>
             </div>
 
             <div class="card" style="width: 18rem;">
-                <img src="./images/bcit.jpg" class="card-img-top">
+                <img src="./images/bcit.jpg" alt="" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title" id="lot-three">Parking Lot C</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                    <a href="input.html" class="link-primary"><b>Write a report</b></a>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
+                    </p>
                     <a href="#" class="btn btn-primary">Read more</a>
                 </div>
             </div>
@@ -238,14 +244,14 @@
         // Funciton for reading the data from FireStore
         function displayParkingLots() {
             db.collection("parkingLots").get()
-            .then(allLots => {
-                allLots.forEach(doc => {
-                    var lotName = doc.data().name;
-                    var lotID = doc.data().code;
-                    console.log(lotID);
-                    document.getElementById(lotID).innerText = lotName;  
+                .then(allLots => {
+                    allLots.forEach(doc => {
+                        var lotName = doc.data().name;
+                        var lotID = doc.data().code;
+                        console.log(lotID);
+                        document.getElementById(lotID).innerText = lotName;
+                    })
                 })
-            })
             displayParkingLots();
         }
     </script>
