@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -14,23 +14,34 @@
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
 
     <!-- Optional styles and scripts of your own -->
-    <link type="text/css" href="styles/my_style.css">
+    <link type="text/css" rel="" href="styles/my_style.css">
+
+    <!-- Firebase 8 CDNs-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
 
     <!-- Link to the api keys for your Firebase project -->
     <script src="scripts/firebaseAPI.js"></script>
 </head>
 
 <body>
-    <!-- Nav Bar-->
+
+    <!-- Nav Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-danger">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">LivePark</a>
+            <a class="navbar-brand" href="main.html">LivePark</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
+            <!-- Nav Bar Buttons -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -48,8 +59,8 @@
                             Features
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">View your profile</a></li>
-                            <li><a class="dropdown-item" href="#">Rate parking status</a></li>
+                            <li><a class="dropdown-item" href="profile.html">View your profile</a></li>
+                            <li><a class="dropdown-item" href="input.html">Rate parking status</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -68,21 +79,61 @@
         </div>
     </nav>
 
-    <!-- Header (Greets the user)-->
+    <!-- Header (Includes Welcome message that greets the user)-->
     <div class="container-fluid bg-dark text-light p-5">
         <div class="container bg-dark p-5">
             <h1 class="display-4">Good morning, <span id="name-goes-here"></span></h1>
             <hr>
-            <p>Thank you for choosing our app<span id="quote-goes-here"></span></p>
+            <p>Thank you for choosing our app
+                <!-- //Probably won't need this//<span id="quote-goes-here"></span> -->
+            </p>
         </div>
     </div>
-    <br><br><br><br><br><br>
+    <br><br>
 
-    <br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br>
 
+    <!-- Cards for Parking Lots-->
+    <div class="container">
+        <div class="card-group">
+
+            <div class="card" style="width: 18rem;">
+                <img src="./images/bcit.jpg" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title" id="lot-one">Parking Lot A</h5>
+                    <a href="input.html" class="link-primary"><b>Write a report</b></a>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
+                    </p>
+                    <a href="#" class="btn btn-primary">Read more</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="./images/bcit.jpg" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title" id="lot-two">Parking Lot B</h5>
+                    <a href="input.html" class="link-primary"><b>Write a report</b></a>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
+                    </p>
+                    <a href="#" class="btn btn-primary">Read more</a>
+                </div>
+            </div>
+
+            <div class="card" style="width: 18rem;">
+                <img src="./images/bcit.jpg" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title" id="lot-three">Parking Lot C</h5>
+                    <a href="input.html" class="link-primary"><b>Write a report</b></a>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
+                    </p>
+                    <a href="#" class="btn btn-primary">Read more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+
+    <!-- Footer -->
     <footer class="bg-light text-center text-lg-start">
-        <!-- Copyright -->
         <div class="text-center py-3" style="background-color: rgba(0, 0, 0, 0.2);">
             © 2021 LiveParkCompany.All rights reserved.
             <a class="text-dark" href="https://mdbootstrap.com/">LivePark.com</a>
@@ -93,21 +144,120 @@
     <!----------------------------------------------->
     <!-- JS: Boostrap, Firebase, API related, add Jquery    -->
     <!----------------------------------------------->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
     </script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script> -->
+    <!--<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script> -->
+    <!--Delete in the future-->
+    <!--<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-firestore.js"></script> -->
+    <!--<script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script> -->
     <!-- Link to the api keys for your firebase project -->
-    <script src="scripts/firebase_api_elmo.js"></script>
+    <!--<script src="scripts/firebase_api_elmo.js"></script> -->
 
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    -->
     <!--------------------------------------------------------------------->
 
+    <script>
+        // Function for printing users name on welcome menu 
+        function insertName() {
+            firebase.auth().onAuthStateChanged(user => {
+                // Checks if user is signed in:
+                if (user) {
+                    console.log(user.uid);
+                    currentUser = db.collection("users").doc(user.uid);
+                    currentUser.get()
+                        .then(userDoc => {
+                            var user_Name = userDoc.data().name;
+                            console.log(user_Name);
+                            document.getElementById("name-goes-here").innerText = user_Name;
+                            $("#name-goes-here").text(user_Name);
+                        })
+                } else {
+                    // No user is signed in.
+                }
+            });
+        }
+        insertName();
+
+
+
+        // Function for storing parking lot information into FireStore
+        function writeParkingLots() {
+            var parkingRef = db.collection("parkingLots");
+
+            parkingRef.add({
+                name: "Parking Lot A",
+                type: "public"
+            });
+            parkingRef.add({
+                name: "Parking Lot B",
+                type: "public"
+            });
+            parkingRef.add({
+                name: "Parking Lot D",
+                type: "public"
+            });
+            parkingRef.add({
+                name: "Parking Lot E",
+                type: "public"
+            });
+            parkingRef.add({
+                name: "Parking Lot F",
+                type: "public"
+            });
+            parkingRef.add({
+                name: "Parking Lot G",
+                type: "public"
+            });
+            parkingRef.add({
+                name: "Parking Lot J",
+                type: "public"
+            });
+            parkingRef.add({
+                name: "Parking Lot K",
+                type: "public"
+            });
+            parkingRef.add({
+                name: "Parking Lot L",
+                type: "public"
+            });
+            parkingRef.add({
+                name: "Parking Lot M",
+                type: "public"
+            });
+            parkingRef.add({
+                name: "Parking Lot N",
+                type: "public"
+            });
+            parkingRef.add({
+                name: "Parking Lot Q",
+                type: "public"
+            });
+            parkingRef.add({
+                name: "Parking Lot S",
+                type: "public"
+            });
+
+        }
+        writeParkingLots(); //Comment this in the future to stop overwriting information
+
+        // Funciton for reading the data from FireStore
+        function displayParkingLots() {
+            db.collection("parkingLots").get()
+                .then(allLots => {
+                    allLots.forEach(doc => {
+                        var lotName = doc.data().name;
+                        var lotID = doc.data().code;
+                        console.log(lotID);
+                        document.getElementById(lotID).innerText = lotName;
+                    })
+                })
+            displayParkingLots();
+        }
+    </script>
 </body>
 
 </html>
