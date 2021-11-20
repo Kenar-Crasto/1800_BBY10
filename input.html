@@ -75,7 +75,7 @@
   <form>
         <div class="form-group">
             <label for="exampleFormControlSelect">What lot? </label>
-            <select class="form-control" id="title">
+            <select class="form-control" id="lot">
               <option>A</option>
               <option>B</option>
               <option>D</option>
@@ -102,8 +102,50 @@
             <br>
     <div class="fixed-bottom py-3 bg-danger">
       <div class="container text-center">
-        <button class="btn btn-danger" type="button">Submit</button>
+        <button class="btn btn-danger" type="button" onclick="writeReview()">Submit</button>
       </div>
     </div>
+
+    <!------JavaScript------->
+    <script>
+        let reviewID = localStorage.getItem("reviewID");
+
+        db.collection("Reviews").where("code", "==", reviewID)
+           .get()
+           .then(queryReview => {
+               //see how many results you have got from the query
+               size = queryReview.size;
+               // get the documents of query
+               Reviews = queryReview.docs;
+
+           }) 
+           function writeReview() {
+               let Lot = document.getElementById("lot").value;
+               let Status = document.getElementById("status").value;
+               firebase.auth().onAuthStateChanged(user => {
+               if (user) {
+                   var currentUser = db.collection("users").doc(user.uid)
+                   var userID = user.uid;
+                   //get the document for current user.
+                   currentUser.get()
+                       .then(userDoc => {
+
+                                                       // Start a new collection and add all data in it.
+                           db.collection("Reviews").add({
+                               Code: reviewID,
+                               UserID: userID,
+                               Lot: Lot,
+                               Status: Status
+                           });
+                       })
+               } else {
+                   // No user is signed in.
+                                       console.log("no user signed in");
+               }
+           });
+       }
+    
+          
+    </script>
 
 </html>
