@@ -45,7 +45,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="main.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="#">About Us</a>
@@ -71,10 +71,6 @@
                         <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true">Support</a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-dark" type="submit">Search</button>
-                </form>
             </div>
         </div>
     </nav>
@@ -161,6 +157,7 @@
     <!--------------------------------------------------------------------->
 
     <script>
+
         // Function for printing users name on welcome menu 
         function insertName() {
             firebase.auth().onAuthStateChanged(user => {
@@ -242,7 +239,7 @@
             });
 
         }
-        writeParkingLots(); //Comment this in the future to stop overwriting information
+        //writeParkingLots(); //Comment this in the future to stop overwriting information
 
         // Funciton for reading the data from FireStore
         function displayParkingLots() {
@@ -255,7 +252,7 @@
                         document.getElementById(lotID).innerText = lotName;
                     })
                 })
-            displayParkingLots();
+            //displayParkingLots();
         }
     </script>
 </body>
