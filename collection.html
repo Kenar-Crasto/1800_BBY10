@@ -131,13 +131,15 @@
                 let parkingtype = columns[1]; // Parking Type (Public, Visitor, Staff)
                 let details = "";
                 details +="Parking Lot Type: " + parkingtype;
-
+                if (parkingtype.includes("Student")) {
                 console.log(parkinglot); // Gets a list of the parking lot
                 db.collection("parkinglots").add({ // Adds to FireStore
                     name: parkinglot,
                     details: details
                 })
+            }
             })
+        
         }
 
         // Function reading the collection of parking lots
