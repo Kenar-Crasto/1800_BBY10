@@ -122,7 +122,7 @@
         // Function for getting data from the BCit parking lots file
         // and adds to FireStore
         async function getCSVdata() {
-            const response = await fetch('./BCIT-parking-lots.csv'); // sends get request to file
+            const response = await fetch('./BCIT-parkinglots.csv'); // sends get request to file
             const data = await response.text() // gets response from file
             const list = data.split('\n').slice(1); // gets a line
             list.forEach(row => {
