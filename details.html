@@ -79,9 +79,9 @@
         </div>
     </nav>
 
-
+    <!--Parking Lot Information-->
     <div class="container">
-        <h1>Details</h1>
+        <h1><span id="name-goes-here"></span> Details</h1>
         <!-- Here is container for cards  -->
         <div class="container">
             <div id="details-go-here">
@@ -100,22 +100,23 @@
             let message = "Collection is: " + collection; //build message to display
             message += "Document id is:  " + id;
             document.getElementById("details-go-here").innerHTML = message;
-
+            showParkingDetails(id); // Sends the ID of the lot into showParkingDeatails function
             // you have collection name, and id; 
             // you can now read from db if you want
         }
         showDetails();
 
-        function showParkingDetails() {
-            currentLot = db.collection("parkinglots").doc(id);
-            currentLot.get()
+        // Function for showing the parking lot name 
+        function showParkingDetails(id) {
+            currentLot = db.collection("parkinglots").doc(id); // Goes into the parking lots collection and then into ID specified document
+            currentLot.get() // Gets the information above
             .then(lotDoc =>{
-                var lot_Name
+                console.log(currentLot);
+                var lot_Name = lotDoc.data().name; // Assigns the name field of the document to a variable
+                console.log(lot_Name);
+                document.getElementById("name-goes-here").innerText = lot_Name; // Assigns the variable into an elemtent
             })  
         }
-
-
-        
         
     </script>
 </body>
