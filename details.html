@@ -102,6 +102,18 @@
             // you can now read from db if you want
         }
         showDetails();
+
+        function showParkingDetails() {
+            currentLot = db.collection("parkinglots").doc(id);
+            currentLot.get()
+            .then(lotDoc =>{
+                
+            })  
+        }
+
+
+        
+        
     </script>
 </body>
 
