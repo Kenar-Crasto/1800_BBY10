@@ -99,14 +99,14 @@
         </div>
     </div>
 
-
+    <br><br>
     <!-- Footer -->
-    <!--footer class="bg-light text-center text-lg-start">
+    <footer class="bg-light text-center text-lg-start">
         <div class="text-center py-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2021 LiveParkCompany.All rights reserved.
+            © 2021 LiveParkCompany. All rights reserved.
             <a class="text-dark" href="https://mdbootstrap.com/">LivePark.com</a>
         </div>
-    </footer> -->
+    </footer>
 
 
     <!----------------------------------------------->
@@ -159,7 +159,10 @@
                         newcard.querySelector('.card-title').innerHTML = title;
                         newcard.querySelector('.card-text').innerHTML = details;
                         newcard.querySelector('.card-image').src = "./images/" + collection +
-                        ".jpg"; //hikes.jpg
+                        ".jpg"; 
+
+                        // Updates the href to send to details.html if they click for more details
+                        newcard.querySelector('.card-href').href = "details.html?collection="+collection+"&id=" + doc.id;    //firestore doc ID
 
                         // Give unique ids to all elements for future use
                         newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
