@@ -135,9 +135,9 @@
                     snap.forEach(doc => { // iterate thru each doc
                         var title = doc.data().Name;
                         var details = doc.data().Status;
-                        const d = new Date();
-                        var timestamp = doc.data().Time;
-                        let timeStamp = d.toString();
+                        timestamp = doc.data().Time;
+                        timestamp = new Date();
+                        let timeStamp = timestamp.toString();
                         let newcard = CardTemplate.content.cloneNode(true); // Clone the template
 
                         // Update title and text and image
