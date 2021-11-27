@@ -109,40 +109,16 @@
 
     <!------JavaScript------->
     <script>
-        db.collection("Reviews").where("code", "==", reviewID)
-           .get()
-           .then(queryReview => {
-               //see how many results you have got from the query
-               size = queryReview.size;
-               // get the documents of query
-               Reviews = queryReview.docs;
+        function writeReview(){
+            var LotName = document.getElementById("lot").value;
+            var NewStatus = document.getElementById("status").value;
 
-           }) 
-           function writeReview() {
-               let Lot = document.getElementById("lot").value;
-               let Status = document.getElementById("status").value;
-               firebase.auth().onAuthStateChanged(user => {
-               if (user) {
-                   var currentUser = db.collection("users").doc(user.uid)
-                   var userID = user.uid;
-                   //get the document for current user.
-                   currentUser.get()
-                       .then(userDoc => {
-
-                                                       // Start a new collection and add all data in it.
-                           db.collection("Reviews").add({
-                               Lot: Lot,
-                               Status: Status
-                           });
-                       })
-               } else {
-                   // No user is signed in.
-                                       console.log("no user signed in");
-               }
-           });
-       }
-    
-          
+            db.collection("ParkingLots").doc(LotName)
+            .set({
+                Status: NewStatus,
+                Time: firebase.firestore.FieldValue.serverTimestamp()
+          }, {merge: true})
+        }       
     </script>
 
 </html>
