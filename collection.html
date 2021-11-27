@@ -135,12 +135,14 @@
                     snap.forEach(doc => { // iterate thru each doc
                         var title = doc.data().Name;
                         var details = doc.data().Status;
+                        const d = new Date();
                         var timestamp = doc.data().Time;
+                        let timeStamp = d.toString();
                         let newcard = CardTemplate.content.cloneNode(true); // Clone the template
 
                         // Update title and text and image
                         newcard.querySelector('.card-title').innerHTML = title;
-                        newcard.querySelector('.card-text').innerHTML = details + " " + timestamp;
+                        newcard.querySelector('.card-text').innerHTML = "Status: " + details + "<br>Report Time: " + timeStamp;
                         newcard.querySelector('.card-image').src = "./images/" + collection +
                         ".jpg"; 
 
