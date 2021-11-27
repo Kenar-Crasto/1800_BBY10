@@ -52,7 +52,7 @@
                         <a class="nav-link active" aria-current="page" href="main.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">About Us</a>
+                        <a class="nav-link active" href="collection.html">View Lots</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="input.html">Report</a>
@@ -97,7 +97,7 @@
         <h1>BCIT PARKING LOTS</h1>
         <!-- Here is container for cards  -->
         <div class="container">
-            <div id="parkinglots-go-here" class="row row-cols-auto">
+            <div id="ParkingLots-go-here" class="row row-cols-auto">
 
             </div>
         </div>
@@ -123,45 +123,24 @@
     <!--------------------------------------------------------------------->
 
     <script>
-        // Function for getting data from the BCit parking lots file
-        // and adds to FireStore
-        async function getCSVdata() {
-            const response = await fetch('./BCIT-parkinglots.csv'); // sends get request to file
-            const data = await response.text() // gets response from file
-            const list = data.split('\n').slice(1); // gets a line
-            list.forEach(row => {
-                let columns = row.split(','); // gets token
-                let parkinglot = columns[0]; // Parking Lot Identifier (Lot A, Lot 1)
-                let parkingtype = columns[1]; // Parking Type (Public, Visitor, Staff)
-                let details = "";
-                details +="Parking Lot Type: " + parkingtype;
-                if (parkingtype.includes("Student")) {
-                console.log(parkinglot); // Gets a list of the parking lot
-                db.collection("parkinglots").add({ // Adds to FireStore
-                    name: parkinglot,
-                    details: details
-                })
-            }
-            })
-        
-        }
-
+       
         // Function that reads the collection of parking lots
         // and display each parking lot as a card
         function displayCards(collection) { 
             let CardTemplate = document.getElementById("CardTemplate");
 
-            db.collection(collection).get() // Goes to FireStore's "parkinglots"
+            db.collection(collection).get() // Goes to FireStore's "ParkingLots"
                 .then(snap => {
                     var i = 1;
                     snap.forEach(doc => { // iterate thru each doc
-                        var title = doc.data().name;
-                        var details = doc.data().details;
+                        var title = doc.data().Name;
+                        var details = doc.data().Status;
+                        var timestamp = doc.data().Time;
                         let newcard = CardTemplate.content.cloneNode(true); // Clone the template
 
                         // Update title and text and image
                         newcard.querySelector('.card-title').innerHTML = title;
-                        newcard.querySelector('.card-text').innerHTML = details;
+                        newcard.querySelector('.card-text').innerHTML = details + " " + timestamp;
                         newcard.querySelector('.card-image').src = "./images/" + collection +
                         ".jpg"; 
 
@@ -180,7 +159,7 @@
                 })
         }
 
-        displayCards("parkinglots");
+        displayCards("ParkingLots");
     </script>
 </body>
 

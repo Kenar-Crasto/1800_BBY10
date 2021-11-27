@@ -30,7 +30,8 @@
     <script src="scripts/firebaseAPI.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fruktur&family=Roboto+Condensed:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fruktur&family=Roboto+Condensed:ital@0;1&display=swap"
+        rel="stylesheet">
     <title>LivePark</title>
 </head>
 
@@ -52,7 +53,7 @@
                         <a class="nav-link active" aria-current="page" href="main.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">About Us</a>
+                        <a class="nav-link active" href="collection.html">View Lots</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="input.html">Report</a>
@@ -86,6 +87,8 @@
         <div class="container">
             <div id="details-go-here">
             </div>
+            
+            <div id="status-goes-here"><h1></h1></div>
         </div>
     </div>
 
@@ -96,28 +99,33 @@
             let params = new URL(window.location.href);
             let id = params.searchParams.get("id"); //parse "id"
             let collection = params.searchParams.get("collection"); //parse "collection"
-
-            let message = "Collection is: " + collection; //build message to display
+            let message = "Collection: " + collection; //build message to display
             message += "Document id is:  " + id;
             document.getElementById("details-go-here").innerHTML = message;
             showParkingDetails(id); // Sends the ID of the lot into showParkingDeatails function
             // you have collection name, and id; 
-            // you can now read from db if you want
+           
         }
         showDetails();
 
         // Function for showing the parking lot name 
         function showParkingDetails(id) {
-            currentLot = db.collection("parkinglots").doc(id); // Goes into the parking lots collection and then into ID specified document
+            currentLot = db.collection("ParkingLots").doc(
+            id); // Goes into the parking lots collection and then into ID specified document
             currentLot.get() // Gets the information above
-            .then(lotDoc =>{
-                console.log(currentLot);
-                var lot_Name = lotDoc.data().name; // Assigns the name field of the document to a variable
-                console.log(lot_Name);
-                document.getElementById("name-goes-here").innerText = lot_Name; // Assigns the variable into an elemtent
-            })  
+            currentStatus = db.collection("ParkingLots").doc(id);
+            currentStatus.get()
+                .then(lotDoc => {
+                    console.log(currentLot);
+                    var lot_Name = lotDoc.data().Name; // Assigns the name field of the document to a variable
+                    var lot_Status = lotDoc.data().Status;
+                    console.log(lot_Name);
+                    console.log(lot_Status);
+                    document.getElementById("name-goes-here").innerText =
+                    lot_Name; // Assigns lot name into an elemtent
+                    document.getElementById("status-goes-here").innerText = lot_Status; // Assigns lot status into an element
+                })
         }
-        
     </script>
 </body>
 
