@@ -185,70 +185,9 @@
         insertName();
 
 
-
-        // Function for storing parking lot information into FireStore
-        function writeParkingLots() {
-            var parkingRef = db.collection("parkingLots");
-
-            parkingRef.add({
-                name: "Parking Lot A",
-                type: "public"
-            });
-            parkingRef.add({
-                name: "Parking Lot B",
-                type: "public"
-            });
-            parkingRef.add({
-                name: "Parking Lot D",
-                type: "public"
-            });
-            parkingRef.add({
-                name: "Parking Lot E",
-                type: "public"
-            });
-            parkingRef.add({
-                name: "Parking Lot F",
-                type: "public"
-            });
-            parkingRef.add({
-                name: "Parking Lot G",
-                type: "public"
-            });
-            parkingRef.add({
-                name: "Parking Lot J",
-                type: "public"
-            });
-            parkingRef.add({
-                name: "Parking Lot K",
-                type: "public"
-            });
-            parkingRef.add({
-                name: "Parking Lot L",
-                type: "public"
-            });
-            parkingRef.add({
-                name: "Parking Lot M",
-                type: "public"
-            });
-            parkingRef.add({
-                name: "Parking Lot N",
-                type: "public"
-            });
-            parkingRef.add({
-                name: "Parking Lot Q",
-                type: "public"
-            });
-            parkingRef.add({
-                name: "Parking Lot S",
-                type: "public"
-            });
-
-        }
-        //writeParkingLots(); //Comment this in the future to stop overwriting information
-
         // Funciton for reading the data from FireStore
         function displayParkingLots() {
-            db.collection("parkingLots").get()
+            db.collection("ParkingLots").get(favourites)
                 .then(allLots => {
                     allLots.forEach(doc => {
                         var lotName = doc.data().name;
