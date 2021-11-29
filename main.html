@@ -101,33 +101,32 @@
             <div class="card" style="width: 18rem;">
                 <img src="./images/bcit.jpg" alt="" class="card-img-top">
                 <div class="card-body">
-                    <h5 class="card-title" id="lot-one">Parking Lot A</h5>
-                    <a href="input.html" class="link-primary"><b>Write a report</b></a>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
+                    <h5 class="card-title" id="favourite_lot1">Parking Lot A</h5>
+                    
+                    <p class="card-text">This is your first favourited parking lot.
                     </p>
-                    <a href="#" class="btn btn-primary">Read more</a>
+                    <a href="input.html" class="btn btn-primary">Write a Report</a>
                 </div>
             </div>
 
             <div class="card" style="width: 18rem;">
                 <img src="./images/bcit.jpg" alt="" class="card-img-top">
                 <div class="card-body">
-                    <h5 class="card-title" id="lot-two">Parking Lot B</h5>
-                    <a href="input.html" class="link-primary"><b>Write a report</b></a>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
+                    <h5 class="card-title" id="favourite_lot2">Parking Lot B</h5>
+                    <p class="card-text">This is your second favourited parking lot.
                     </p>
-                    <a href="#" class="btn btn-primary">Read more</a>
+                    <a href="input.html" class="btn btn-primary">Write a Report</a>
                 </div>
             </div>
 
             <div class="card" style="width: 18rem;">
                 <img src="./images/bcit.jpg" alt="" class="card-img-top">
                 <div class="card-body">
-                    <h5 class="card-title" id="lot-three">Parking Lot C</h5>
-                    <a href="input.html" class="link-primary"><b>Write a report</b></a>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
+                    <h5 class="card-title" id="favourite_lot3">Parking Lot C</h5>
+                  
+                    <p class="card-text">This is your third favourited parking lot.
                     </p>
-                    <a href="#" class="btn btn-primary">Read more</a>
+                    <a href="input.html" class="btn btn-primary">Write a Report</a>
                 </div>
             </div>
         </div>
@@ -183,7 +182,27 @@
             });
         }
         insertName();
-
+        
+        function showFavouriteParkingLot() {
+            db.collection("users").get()
+            .then(allFavourites => {
+                allFavourites.forEach(doc => {
+                var favouriteLot = doc.data().favourites;
+                console.log(favouriteLot);
+                var first = favouriteLot[0];
+                var second = favouriteLot[1];
+                var third = favouriteLot[2];
+                console.log(first);
+                console.log(second);
+                console.log(third);
+                document.getElementById("favourite_lot1").innerText = "Parking Lot " + first; 
+                document.getElementById("favourite_lot2").innerText = "Parking Lot " + second; 
+                document.getElementById("favourite_lot3").innerText = "Parking Lot " + third; 
+               
+            })
+            })
+        }
+        showFavouriteParkingLot();
 
         // Funciton for reading the data from FireStore
         function displayParkingLots() {
