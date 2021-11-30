@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>My BCIT Project</title>
+    <title>LivePark</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Optional styles and scripts of your own -->
@@ -29,8 +29,8 @@
     <script src="./scripts/firebaseAPI.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fruktur&family=Roboto+Condensed:ital@0;1&display=swap" rel="stylesheet">
-    <title>LivePark</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fruktur&family=Roboto+Condensed:ital@0;1&display=swap"
+        rel="stylesheet">
 
 </head>
 
@@ -39,8 +39,8 @@
     <!-------------------------------------->
     <!-- The following is HTML for layout -->
     <!-------------------------------------->
-      <!-- Nav Bar -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-danger">
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-danger">
         <div class="container-fluid">
             <a class="navbar-brand" href="main.html">LivePark</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -149,7 +149,7 @@
             });
         }
 
-        //call the function to run it 
+        // Call the function to run it 
         populateInfo();
 
         // Function that allows forms to be edited
@@ -157,7 +157,7 @@
             //Enable the form fields
             document.getElementById('personalInfoFields').disabled = false;
         }
-        
+
         // Function that saves users information into form
         function saveUserInfo() {
             userName = document.getElementById('nameInput').value;

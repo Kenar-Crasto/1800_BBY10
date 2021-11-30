@@ -38,7 +38,7 @@
 
 
 
-  
+
 </head>
 
 <body>
@@ -95,7 +95,7 @@
                 <p class="card-text"></p>
                 <a class="btn btn-primary card-href" href="input.html">Write a Report</a>
                 <button type="button" class="btn btn-secondary">
-                     <i class="material-icons">favorite</i>
+                    <i class="material-icons">favorite</i>
                 </button>
 
             </div>
@@ -105,7 +105,7 @@
     <!-- Parking Lot Gallery -->
     <div class="container">
         <h1>BCIT PARKING LOTS</h1>
-        <!-- Here is container for cards  -->
+        <!-- Parking Lot Cards  -->
         <div class="container">
             <div id="ParkingLots-go-here" class="row row-cols-auto">
 
@@ -155,7 +155,7 @@
                         newcard.querySelector('.card-image').src = "./images/" + collection +
                             ".jpg";
 
-
+                        // Gets id of the parking lot that is favourited
                         newcard.querySelector('.material-icons').onclick = () => setFave(lotname);
 
                         // Updates the href to send to details.html if they click for more details
@@ -175,15 +175,12 @@
                     })
                 })
         }
-
+        // Displays the parking lot cards
         displayCards("ParkingLots");
 
 
 
-        //-----------------------------------------------------------------
-        // Find out who is logged in
-        // add the lotid (input param) to the favourites array for that user
-        //-----------------------------------------------------------------
+        // Sets the favourited parking lots in user's favourites field
         function setFave(lotid) {
             console.log(lotid);
             firebase.auth().onAuthStateChanged(function (user) {
