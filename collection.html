@@ -103,8 +103,8 @@
 
     <!-- Parking Lot Gallery -->
     <div class="container">
-        <h1>BCIT PARKING LOTS</h1>
-        <h2><i><b>Students giving real time info to help fellow Students.</i></b></h2>
+        <h1>BCIT PARKING LOTS (Update Lot Status)</h1>
+        <h2><i><b>Students giving real time info to help fellow Students.</b></i></h2>
         <!-- Parking Lot Cards  -->
         <div class="container">
             <div id="ParkingLots-go-here" class="row row-cols-auto">
@@ -150,15 +150,13 @@
                         console.log(lotname);
                         // Update title and text and image
                         newcard.querySelector('.card-title').innerHTML = title;
-                        newcard.querySelector('.card-text').innerHTML = "Status: " + "<b>" + details + "</b>"
-                           + "<br>Last Update: " + timestamp;
+                        newcard.querySelector('.card-text').innerHTML = "Status: " + "<b>" + details +
+                            "</b>" +
+                            "<br>Last Update: " + timestamp;
 
                         // Gets id of the parking lot that is favourited
                         newcard.querySelector('.material-icons').onclick = () => setFave(lotname);
 
-                        // Updates the href to send to details.html if they click for more details
-                        // newcard.querySelector('.card-href').href = "details.html?collection=" + collection +
-                        //     "&id=" + doc.id; //firestore doc ID
 
                         // Give unique ids to all elements for future use
                         newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);

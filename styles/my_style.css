@@ -6,3 +6,11 @@ h2{
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 25px;
 }
+
+.card-title {
+    font-size: 30px;
+}
+
+.navbar-brand {
+    font-size: 25px;
+}
