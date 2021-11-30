@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>LivePark</title>
+    <title>Live Park</title>
     <meta name="comp1800 boilerplate code" content="my bcit project">
     <meta name="author" content="BCIT">
 
@@ -20,7 +20,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
@@ -32,6 +32,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fruktur&family=Roboto+Condensed:ital@0;1&display=swap"
         rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bahiana&display=swap" rel="stylesheet">
 
 </head>
 
@@ -64,13 +67,13 @@
                             Features
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="profile.html">View your profile</a></li>
+                            <li><a class="dropdown-item" href="collection.html">View parking lots</a></li>
                             <li><a class="dropdown-item" href="input.html">Rate parking status</a></li>
                             <li>
-                                <hr class="dropdown-divider">
+                              <hr class="dropdown-divider">
                             </li>
                             <li><a class="dropdown-item" href="#">Edit profile settings</a></li>
-                        </ul>
+                          </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true"> Support</a>
@@ -105,7 +108,7 @@
 
                     <p class="card-text">This is your first favourited parking lot.
                     </p>
-                    <a href="input.html" class="btn btn-primary">Write a Report</a>
+                    <a href="input.html" class="btn btn-danger">Write a Report</a>
                 </div>
             </div>
 
@@ -115,7 +118,7 @@
                     <h5 class="card-title" id="favourite_lot2">Parking Lot B</h5>
                     <p class="card-text">This is your second favourited parking lot.
                     </p>
-                    <a href="input.html" class="btn btn-primary">Write a Report</a>
+                    <a href="input.html" class="btn btn-danger">Write a Report</a>
                 </div>
             </div>
 
@@ -126,7 +129,7 @@
 
                     <p class="card-text">This is your third favourited parking lot.
                     </p>
-                    <a href="input.html" class="btn btn-primary">Write a Report</a>
+                    <a href="input.html" class="btn btn-danger">Write a Report</a>
                 </div>
             </div>
         </div>
@@ -145,7 +148,7 @@
     <!----------------------------------------------->
     <!-- JS: Boostrap, Firebase, API related, add Jquery    -->
     <!----------------------------------------------->
-   
+
 
     <!--------------------------------------------------------------------->
     <!-- JS files: Your own JavaScript functions included here    -->
@@ -208,7 +211,7 @@
         //                 document.getElementById(lotID).innerText = lotName;
         //             })
         //         })
-            //displayParkingLots();
+        //displayParkingLots();
         // }
 
         // Function that allows user to log out
