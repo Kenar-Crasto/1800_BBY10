@@ -89,11 +89,10 @@
     <!-- Templates for general use, not displayed -->
     <template id="CardTemplate">
         <div class="card py-2 mx-2" style="width: 18rem;">
-            <img class="card-image card-img-top" src=" ..." alt="...">
             <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text"></p>
-                <a class="btn btn-primary card-href" href="input.html">Write a Report</a>
+                <a class="btn btn-danger card-href" href="input.html">Update Status</a>
                 <button type="button" class="btn btn-secondary">
                     <i class="material-icons">favorite</i>
                 </button>
@@ -105,6 +104,7 @@
     <!-- Parking Lot Gallery -->
     <div class="container">
         <h1>BCIT PARKING LOTS</h1>
+        <h2><i><b>Students giving real time info to help fellow Students.</i></b></h2>
         <!-- Parking Lot Cards  -->
         <div class="container">
             <div id="ParkingLots-go-here" class="row row-cols-auto">
@@ -150,10 +150,8 @@
                         console.log(lotname);
                         // Update title and text and image
                         newcard.querySelector('.card-title').innerHTML = title;
-                        newcard.querySelector('.card-text').innerHTML = "Status: " + details +
-                            "<br>Report Time: " + timestamp;
-                        newcard.querySelector('.card-image').src = "./images/" + collection +
-                            ".jpg";
+                        newcard.querySelector('.card-text').innerHTML = "Status: " + "<b>" + details + "</b>"
+                           + "<br>Last Update: " + timestamp;
 
                         // Gets id of the parking lot that is favourited
                         newcard.querySelector('.material-icons').onclick = () => setFave(lotname);
@@ -165,7 +163,6 @@
                         // Give unique ids to all elements for future use
                         newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
                         newcard.querySelector('.card-text').setAttribute("id", "ctext" + i);
-                        newcard.querySelector('.card-image').setAttribute("id", "cimage" + i);
 
                         // Attach to gallery
                         document.getElementById(collection + "-go-here").appendChild(newcard);
