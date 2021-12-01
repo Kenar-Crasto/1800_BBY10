@@ -15,3 +15,11 @@ h2{
     font-size: 35px;
     font-family: 'Bahiana', cursive;
 }
+
+#favouriteheader {
+    text-align: center;
+    text-decoration: underline;
+    font-weight: 900;
+    font-size: 50px;
+    padding: 1%;
+}
