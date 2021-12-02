@@ -179,22 +179,6 @@
 
         // Gets the favourited parking lot field in users collection and displays the name of it
         function showFavouriteParkingLot() {
-            //     db.collection("users").get()
-            //         .then(allFavourites => {
-            //             allFavourites.forEach(doc => {
-            //                 favouriteLot = doc.data().favourites;
-            //                 console.log(favouriteLot);
-            //                 var first = favouriteLot[0];
-            //                 var second = favouriteLot[1];
-            //                 var third = favouriteLot[2];
-            //                 console.log(first);
-            //                 console.log(second);
-            //                 console.log(third);
-            //                 document.getElementById("favourite_lot1").innerText = "Parking Lot " + first;
-            //                 document.getElementById("favourite_lot2").innerText = "Parking Lot " + second;
-            //                 document.getElementById("favourite_lot3").innerText = "Parking Lot " + third;
-            //             })
-            //         })
             firebase.auth().onAuthStateChanged(user => {
                 // Checks if user is signed in:
                 if (user) {
