@@ -139,11 +139,13 @@
   ​
   <!------JavaScript------->
   <script>
+    // Updates statuses in firebase according to LotName
     function writeReview() {
       var LotName = document.getElementById("lot").value;
       var NewStatus = document.getElementById("status").value;
-
+      // Go to ParkingLots collection, go to the corresponding Lot Name
       db.collection("ParkingLots").doc(LotName)
+      // Update the status and time for that Lot.
         .set({
           Status: NewStatus,
           Time: firebase.firestore.FieldValue.serverTimestamp()
